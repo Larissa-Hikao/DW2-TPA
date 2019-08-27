@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%- include('../bootstrap.ejs') %>
+</head>
+<body>
+    <h1>Professores</h1>
+    <% if (professores.length > 0) { %>
+        <% for (var professor of professores) { %>
+            <div><%= professor.nome %></div>
+        <% } %>
+
+    <% } else { %>
+        <div class='alert-info'>Não existem professores cadastrados</div>
+    <% } %>
+    <form method="post">
+        <h3>Novo professor</h3>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <button type="submit">Inserir</button>
+    </form>
+
+</body>
+</html>
